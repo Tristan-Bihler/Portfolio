@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<section class="section-hero-short" style="background-image: url('{{ page.splash_image | default: '/assets/images/splash.jpg' | relative_url }}');">
+  <div class="hero-overlay"></div>
+  <div class="hero-short-content">
+    <p class="label">{{ page.category | default: 'Blog' }}</p>
+    <h1 class="hero-title">{{ page.title }}</h1>
+    <p class="hero-subtitle">{{ page.date | date: "%B %-d, %Y" }}</p>
+  </div>
+</section>
+
+<article class="section-content">
+  <div class="container-narrow prose">
+    {{ content }}
+  </div>
+</article>
+
+<div class="post-nav">
+  <div class="container">
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+      <span class="nav-dir">← Previous</span>
+      <span class="nav-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+      <span class="nav-dir">Next →</span>
+      <span class="nav-title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+  </div>
+</div>

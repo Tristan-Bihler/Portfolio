@@ -1,0 +1,104 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="section-hero-full" style="background-image: url('{{ page.splash_image | default: '/assets/images/splash.jpg' | relative_url }}');">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Tristan Gregory<br>Bihler</h1>
+    <p class="hero-tagline">Electrical Engineering &amp; IT &nbsp;·&nbsp; Data Analytics &nbsp;·&nbsp; Hiking &amp; Travel</p>
+    <div class="hero-actions">
+      <a href="{{ '/blog' | relative_url }}" class="btn-primary">Read the Blog</a>
+      <a href="{{ '/projects' | relative_url }}" class="btn-outline-light">View Projects</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <span>↓</span>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section-about">
+  <div class="container grid-2col">
+    <div class="about-photo-col">
+      <div class="about-photo-wrap">
+        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.author.name }}" class="about-photo">
+        <div class="about-photo-bar"></div>
+      </div>
+      <div class="skill-chips">
+        <span class="chip">Electronics</span>
+        <span class="chip">Embedded Systems</span>
+        <span class="chip">Python</span>
+        <span class="chip">C / C++</span>
+        <span class="chip">Matlab</span>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <p class="label">About Me</p>
+      <h2 class="about-heading">Engineer,<br>Explorer,<br>Builder.</h2>
+      <p>Trained in electronics and basic mechanics at the Feintechnik school, I'm now studying Electrical Engineering and Information Technology at DHBW — bridging hardware and software, from embedded systems and microcontrollers to data analytics and visualisation.</p>
+      <p>When I'm not debugging circuits or parsing datasets, I'm out hiking and travelling — finding the same satisfaction in reaching a summit as in shipping a project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Preview -->
+<section class="section-blog-preview">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="label">Recent Writing</p>
+        <h2 class="section-heading">From the Blog</h2>
+      </div>
+      <a href="{{ '/blog' | relative_url }}" class="btn-outline-accent">All Posts →</a>
+    </div>
+    <div class="card-grid-flush">
+      {% for post in site.posts limit:3 %}
+      <a href="{{ post.url | relative_url }}" class="post-card">
+        <span class="card-label">{{ post.category }}</span>
+        <h3 class="card-title">{{ post.title }}</h3>
+        <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <div class="card-footer-row">
+          <span class="card-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Projects Preview -->
+<section class="section-cream">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="label">Selected Work</p>
+        <h2 class="section-heading">Recent Projects</h2>
+      </div>
+      <a href="{{ '/projects' | relative_url }}" class="btn-outline-dark">All Projects →</a>
+    </div>
+    <div class="card-grid">
+      {% for project in site.projects limit:3 %}
+      <a href="{{ project.url | relative_url }}" class="project-card">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <span class="card-label">{{ project.category }}</span>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-excerpt">{{ project.description }}</p>
+          <div class="tag-row">
+            {% for tag in project.tags %}
+            <span class="tag-accent">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <div class="card-footer-row right">
+            <span class="card-cta">View Project →</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

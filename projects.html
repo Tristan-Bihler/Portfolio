@@ -1,0 +1,38 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<section class="section-hero-short" style="background-image: url('{{ '/assets/images/splash.jpg' | relative_url }}');">
+  <div class="hero-overlay"></div>
+  <div class="hero-short-content">
+    <p class="label">Selected Work</p>
+    <h1 class="hero-title">Projects</h1>
+    <p class="hero-subtitle">Engineering, data, and outdoor tech — built from scratch.</p>
+  </div>
+</section>
+
+<section class="section-content">
+  <div class="container">
+    <div class="card-grid">
+      {% for project in site.projects %}
+      <a href="{{ project.url | relative_url }}" class="project-card">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <span class="card-label">{{ project.category }}</span>
+          <h2 class="card-title">{{ project.title }}</h2>
+          <p class="card-excerpt">{{ project.description }}</p>
+          <div class="tag-row">
+            {% for tag in project.tags %}
+            <span class="tag-accent">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <div class="card-footer-row right" style="margin-top: 20px;">
+            <span class="card-cta">View Project →</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

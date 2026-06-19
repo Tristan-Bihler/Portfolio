@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<section class="section-hero-short" style="background-image: url('{{ page.splash_image | default: '/assets/images/splash.jpg' | relative_url }}');">
+  <div class="hero-overlay"></div>
+  <div class="hero-short-content">
+    <p class="label">{{ page.category | default: 'Project' }}</p>
+    <h1 class="hero-title">{{ page.title }}</h1>
+    <div class="tag-row" style="margin-top: 16px;">
+      {% for tag in page.tags %}
+      <span class="tag-light">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<article class="section-content">
+  <div class="container-narrow prose">
+    {{ content }}
+  </div>
+</article>

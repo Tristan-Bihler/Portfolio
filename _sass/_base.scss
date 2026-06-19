@@ -1,0 +1,67 @@
+@import 'variables';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: $font-sans;
+  background: $cream;
+  color: $text-dark;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+// ── Utilities ────────────────────────────────────────
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 56px;
+  @media (max-width: $bp-md) { padding: 0 24px; }
+}
+
+.container-narrow {
+  max-width: $container-n;
+  margin: 0 auto;
+  padding: 0 56px;
+  @media (max-width: $bp-md) { padding: 0 24px; }
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $accent;
+  font-weight: 500;
+  margin-bottom: 14px;
+  display: block;
+}
+
+// ── Animations ───────────────────────────────────────
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes barGrow {
+  from { width: 0; }
+  to   { width: 48px; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.45; transform: translateY(0); }
+  50%       { opacity: 1;    transform: translateY(5px); }
+}
+
+.anim { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.anim.visible { opacity: 1; transform: translateY(0); }
