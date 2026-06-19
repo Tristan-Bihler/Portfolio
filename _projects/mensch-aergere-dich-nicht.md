@@ -1,54 +1,41 @@
 ---
 layout: project
 title: "Mensch Ärgere Dich Nicht"
-category: Softwareentwicklung
-description: "Digitale Umsetzung des klassischen Brettspiels mit KI-Gegnern, grafischer Oberfläche und Netzwerkmodus für mehrere Spieler."
-tags: [Python, Pygame, KI, Netzwerk]
+category: Embedded Systems
+description: "Elektronische Hardware-Umsetzung des Klassikers — ein beleuchtetes Spielbrett mit LED-Tasten, Joysticks und eingebetteter Spiellogik."
+tags: [Embedded, Hardware, LEDs, Spieleentwicklung]
 date: 2026-04-01
+splash_image: /assets/images/projects/mensch-aergere-dich-nicht.jpg
 ---
+
+![Mensch Ärgere Dich Nicht Spielbrett]({{ '/assets/images/projects/mensch-aergere-dich-nicht.jpg' | relative_url }})
 
 ## Überblick
 
-Dieses Projekt ist eine vollständige digitale Umsetzung des Klassikers „Mensch Ärgere Dich Nicht". Das Spiel unterstützt bis zu vier menschliche oder KI-gesteuerte Spieler, bietet eine grafische Oberfläche mit Pygame und einen optionalen Netzwerkmodus über Sockets.
+Dieses Projekt ist eine elektronische Hardware-Umsetzung des Brettspiels „Mensch Ärgere Dich Nicht". Statt Spielfiguren auf Papier werden die Spielfelder durch beleuchtete Taster dargestellt. Vier Joysticks übernehmen die Würffunktion, die gesamte Spiellogik läuft auf einem eingebetteten Mikrocontroller.
 
-## Features
+## Aufbau
 
-- 2–4 Spieler (Mensch oder KI beliebig kombinierbar)
-- Animiertes Spielbrett mit klassischem Farbschema
-- Drei KI-Schwierigkeitsstufen: Zufällig, Greedy, Minimax
-- Netzwerkmodus: Server/Client über TCP-Sockets
-- Spielstand speichern und laden (JSON)
+Das Spielfeld ist auf einer goldfarbenen Aluminiumplatte aufgebaut, die dem Spielbrett entspricht. Jedes Spielfeld ist ein durchsichtiger Taster mit RGB-LED, der per Mikrocontroller einzeln angesteuert wird.
+
+- Über 60 RGB-LED-Taster für alle Spielfelder und Heimfelder
+- 4 Joysticks — je einer pro Spieler, zum Würfeln und Bestätigen
+- Farbkodierung der Spieler: Rot, Blau, Gelb, Grün
+- Zentraler Drucktaster in der Mitte des Feldes
+- Anschluss über USB für Stromversorgung und Kommunikation
+- Robustes Alugehäuse mit 3D-gedruckten Tasterabdeckungen
+
+## Elektronik & Firmware
+
+Die Steuerung erfolgt über einen Mikrocontroller, der die LED-Matrix treibt, Taster-Eingaben entprellt und die vollständige Spiellogik implementiert — von der Würfelsimulation bis zur Regelprüfung beim Herauswerfen.
 
 ## Spiellogik
 
-Die Regelimplementierung behandelt alle Sonderfälle: Herauswerfen, Einzug ins Haus, Zwangswurf bei sechs und Blockierregeln bei besetzten Feldern.
-
-```python
-def move_piece(self, piece: Piece, steps: int) -> MoveResult:
-    new_pos = piece.position + steps
-    if new_pos > TRACK_LENGTH + HOME_OFFSET:
-        return MoveResult.INVALID
-    target = self.board[new_pos % TRACK_LENGTH]
-    if target and target.color == piece.color:
-        return MoveResult.BLOCKED
-    if target:
-        self.send_home(target)
-        return MoveResult.CAPTURE
-    piece.position = new_pos
-    return MoveResult.OK
-```
-
-## KI-Gegner
-
-Der Minimax-Algorithmus mit Alpha-Beta-Pruning bewertet Spielzustände anhand der Figurenpositionen und der Bedrohungslage. Der Greedy-Spieler wählt stets den lokal besten Zug ohne Vorausplanung.
-
-## Netzwerkmodus
-
-Ein einfaches TCP-Protokoll synchronisiert Würfelergebnisse und Züge zwischen Server und Clients. Verbindungsabbrüche werden erkannt und der betroffene Spieler durch die KI ersetzt.
+Alle klassischen Regeln sind implementiert: Pflichtauszug bei einer Sechs, Herauswerfen gegnerischer Figuren, Einzug ins Haus und Sperren durch eigene Figuren. Die aktuelle Spielphase wird durch Blinksequenzen der LEDs kommuniziert.
 
 ## Was ich gelernt habe
 
-- Saubere Trennung von Spiellogik, Darstellung und Netzwerkschicht (MVC)
-- Implementierung von Minimax mit Alpha-Beta-Pruning
-- Grundlagen der Socket-Programmierung in Python
-- Umgang mit asynchronen Ereignissen in einer Spielschleife
+- Ansteuerung großer LED-Matrizen über Multiplexing
+- Entprellung von Eingaben in Hardware und Firmware
+- Implementierung einer vollständigen Spiellogik auf Mikrocontroller-Ebene
+- Mechanische Konstruktion eines stabilen Spielgehäuses

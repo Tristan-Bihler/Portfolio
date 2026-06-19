@@ -1,50 +1,41 @@
 ---
 layout: project
 title: "AOI – Automatische Optische Inspektion"
-category: Bildverarbeitung
-description: "Ein eingebettetes System zur automatischen optischen Inspektion von Leiterplatten mittels Kamera und Bildverarbeitungsalgorithmen."
-tags: [C++, OpenCV, Python, Embedded]
+category: Embedded Systems
+description: "Eigenentwickelte AOI-Maschine zur automatischen Sichtkontrolle von Leiterplatten — mit Kamera, LED-Beleuchtung, Achsantrieb und Touchscreen-Steuerung."
+tags: [Embedded, Bildverarbeitung, Mechanik, Python]
 date: 2026-05-01
+splash_image: /assets/images/projects/aoi.jpg
 ---
+
+![AOI-Maschine]({{ '/assets/images/projects/aoi.jpg' | relative_url }})
 
 ## Überblick
 
-Das AOI-System (Automatische Optische Inspektion) prüft Leiterplatten vollautomatisch auf Bestückungsfehler, fehlende Bauteile und Lötfehler. Eine hochauflösende Kamera nimmt Bilder der Platine auf, die anschließend mit OpenCV analysiert und mit einem Referenzbild verglichen werden.
+Die AOI-Maschine (Automatische Optische Inspektion) ist eine vollständige Eigenentwicklung zur Qualitätskontrolle von bestückten Leiterplatten. Das System erfasst hochauflösende Bilder des Prüflings, vergleicht diese mit einem Referenzdatensatz und markiert Abweichungen automatisch.
 
-## Hardware
+## Aufbau
 
-- Raspberry Pi 4 als Steuereinheit
-- 12-Megapixel USB-Kamera mit Telezentrikobjektiv
-- LED-Ringlicht für gleichmäßige Ausleuchtung
-- Linearachse zur reproduzierbaren Positionierung
+Das Gehäuse besteht aus Aluminiumprofilen und Acrylglasscheiben. Im Inneren befinden sich zwei Ebenen: die obere Einheit beherbergt die Steuerelektronik und einen Touchscreen-PC, die untere Einheit enthält den Inspektionsbereich mit Kamera und Beleuchtung.
 
-## Bildverarbeitung
+- Kamera mit Telezentrikobjektiv für verzerrungsfreie Aufnahmen
+- LED-Ringbeleuchtung in Rot für optimalen Kontrast
+- X-Y-Linearachse zur reproduzierbaren Positionierung der Platine
+- Touchscreen-Bedienoberfläche mit Start/Stop-Steuerung und Live-Anzeige
+- Not-Aus-Taster nach Sicherheitsnorm
 
-Die Verarbeitungspipeline basiert auf OpenCV und umfasst Vorverarbeitung, Merkmalextraktion und Anomalieerkennung durch Template-Matching sowie Konturanalyse.
+## Steuerung & Software
 
-```cpp
-cv::Mat preprocess(const cv::Mat& input) {
-    cv::Mat gray, blurred, thresh;
-    cv::cvtColor(input, gray, cv::COLOR_BGR2GRAY);
-    cv::GaussianBlur(gray, blurred, {5, 5}, 0);
-    cv::adaptiveThreshold(blurred, thresh, 255,
-        cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 11, 2);
-    return thresh;
-}
-```
-
-## Auswertung
-
-Erkannte Fehler werden automatisch markiert und in einem Prüfbericht mit Koordinaten und Fehlertyp gespeichert. Eine Python-Oberfläche zeigt Ergebnisse in Echtzeit an und erlaubt manuelle Nachkontrolle.
+Die Steuerungssoftware läuft auf einem eingebetteten PC und kommuniziert über Schnittstellen mit den Achsmotoren und der Kamera. Die Bedienoberfläche zeigt den aktuellen Status, Prüfergebnisse und Statistiken in Echtzeit an.
 
 ## Ergebnisse
 
-- Erkennungsrate: &gt;97 % bei definierten Fehlerklassen
-- Taktzeit: &lt;3 Sekunden pro Platine
-- Falshalarmrate: &lt;1,5 %
+- Taktzeit unter 5 Sekunden pro Platine
+- Erkennungsrate über 97 % bei definierten Fehlerklassen
+- Reproduzierbare Positioniergenauigkeit durch Linearachse
 
 ## Was ich gelernt habe
 
-- Aufbau robuster Bildverarbeitungspipelines
-- Bedeutung kontrollierter Beleuchtung für reproduzierbare Ergebnisse
-- Integration von Embedded-Hardware und PC-Software über serielle Schnittstellen
+- Mechanischer Aufbau eines Prüfautomaten von Grund auf
+- Integration von Kamera, Beleuchtung und Antrieb in einem Gesamtsystem
+- Entwicklung einer praxistauglichen Bedienoberfläche für industrielle Anwendungen
