@@ -14,7 +14,27 @@ The Film Management System (FMS) is a recommendation engine built in Python as p
 
 ## How It Works
 
-At the core of the system is a **category matrix**: each film is assigned weighted scores across multiple genre and content dimensions. When a user rates or selects a film, those weights are accumulated into a preference profile. The engine then ranks unrated films by similarity to that profile and surfaces the best matches.
+The recommendation engine combines two approaches: a **content-based** method that scores films against a user's genre history, and a **collaborative filtering** method that finds the most similar other user and borrows their picks.
+
+### 1 — Content-Based Scoring
+
+For every candidate film, the engine sums up how often each of its genres appears in the films the user has already liked:
+
+```
+score(film) = Σ genre_count(g)  for each genre g in film
+```
+
+`genre_count` is built with a `Counter` over all genres from the user's liked films. Films whose genres appear more frequently in the user's history receive a higher score. Candidates are then ranked by descending score.
+
+### 2 — Collaborative Filtering (Jaccard Similarity)
+
+To find a similar user, the engine compares genre sets using the Jaccard index:
+
+```
+J(A, B) = |A ∩ B| / |A ∪ B|
+```
+
+where **A** is the set of genres liked by the current user and **B** is the set liked by another user. A value of 1 means identical taste; 0 means no overlap. The user with the highest Jaccard score is selected, and their highly-rated films (not yet seen by the current user) are surfaced as recommendations.
 
 ## Features
 
