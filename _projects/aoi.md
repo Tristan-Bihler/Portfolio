@@ -3,9 +3,10 @@ layout: project
 title: "AOI – Automatische Optische Inspektion"
 category: Embedded Systems
 description: "Eigenentwickelte AOI-Maschine zur automatischen Sichtkontrolle von Leiterplatten — mit Kamera, LED-Beleuchtung, Achsantrieb und Touchscreen-Steuerung."
-tags: [Embedded, Bildverarbeitung, Mechanik, Python]
+tags: [Python, OpenCV, PyQt5, Firebase]
 date: 2026-05-01
 splash_image: /assets/images/projects/aoi.jpg
+github: https://github.com/Tristan-Bihler/Feintechnikschule_Gesellenstueck_AOI
 ---
 
 ![AOI-Maschine]({{ '/assets/images/projects/aoi.jpg' | relative_url }})

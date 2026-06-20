@@ -3,9 +3,10 @@ layout: project
 title: "Mensch Ärgere Dich Nicht"
 category: Embedded Systems
 description: "Elektronische Hardware-Umsetzung des Klassikers — ein beleuchtetes Spielbrett mit LED-Tasten, Joysticks und eingebetteter Spiellogik."
-tags: [Embedded, Hardware, LEDs, Spieleentwicklung]
+tags: [Embedded, Hardware, LEDs, C++]
 date: 2026-04-01
 splash_image: /assets/images/projects/mensch-aergere-dich-nicht.jpg
+github: https://github.com/Tristan-Bihler/Mensch_Aergere_Dich_Nicht
 ---
 
 ![Mensch Ärgere Dich Nicht Spielbrett]({{ '/assets/images/projects/mensch-aergere-dich-nicht.jpg' | relative_url }})
