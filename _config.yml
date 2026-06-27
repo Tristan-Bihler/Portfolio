@@ -39,6 +39,9 @@ defaults:
 plugins:
   - jekyll-feed
 
+include:
+  - "_MG_*"
+
 exclude:
   - Gemfile
   - Gemfile.lock
