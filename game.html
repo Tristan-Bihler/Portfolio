@@ -1,0 +1,29 @@
+---
+layout: default
+title: Debug Mode
+permalink: /game/
+---
+<section class="section-game">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="label">TGB Arcade</p>
+        <h1 class="section-heading">Debug Mode</h1>
+      </div>
+      <p class="game-tagline">Bugs are invading the codebase.<br>Squash every last one.</p>
+    </div>
+
+    <div class="game-frame">
+      <div class="card-top-bar"></div>
+      <canvas id="game-canvas" width="900" height="560"></canvas>
+    </div>
+
+    <div class="game-help">
+      <span class="chip">← → / A D — Move</span>
+      <span class="chip">Space — Shoot</span>
+      <span class="chip">P — Pause</span>
+      <span class="chip">Touch — Drag &amp; hold</span>
+    </div>
+  </div>
+</section>
+<script src="{{ '/assets/js/game.js' | relative_url }}"></script>

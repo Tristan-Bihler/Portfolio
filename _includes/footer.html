@@ -22,7 +22,17 @@
           </svg>
         </a>
       </div>
-      <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} &middot; Made with Jekyll</p>
+      <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} &middot; Made with Jekyll
+        <a href="{{ '/game' | relative_url }}" class="footer-bug" title="Found a bug?" aria-label="Debug Mode">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="7" y="7" width="10" height="13" rx="5"></rect>
+            <line x1="12" y1="9" x2="12" y2="18"></line>
+            <path d="M9 7 7 4"></path><path d="m15 7 2-3"></path>
+            <path d="M7 11H3"></path><path d="M7 15H4"></path>
+            <path d="M17 11h4"></path><path d="M17 15h3"></path>
+          </svg>
+        </a>
+      </p>
     </div>
   </div>
 </footer>
