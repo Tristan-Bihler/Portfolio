@@ -1,29 +1,27 @@
 ---
 layout: default
-title: Debug Mode
+title: TGB Arcade
 permalink: /game/
 ---
 <section class="section-game">
   <div class="container">
     <div class="section-header">
       <div>
-        <p class="label">TGB Arcade</p>
-        <h1 class="section-heading">Debug Mode</h1>
+        <p class="label">You found it</p>
+        <h1 class="section-heading">TGB Arcade</h1>
       </div>
-      <p class="game-tagline">Bugs are invading the codebase.<br>Squash every last one.</p>
+      <p class="game-tagline">21 hand-built mini games.<br>Vanilla JS, zero dependencies.</p>
     </div>
 
-    <div class="game-frame">
-      <div class="card-top-bar"></div>
-      <canvas id="game-canvas" width="900" height="560"></canvas>
-    </div>
-
-    <div class="game-help">
-      <span class="chip">← → / A D — Move</span>
-      <span class="chip">Space — Shoot</span>
-      <span class="chip">P — Pause</span>
-      <span class="chip">Touch — Drag &amp; hold</span>
+    <div class="card-grid">
+      {% assign games = site.games | sort: 'order' %}
+      {% for game in games %}
+      <a href="{{ game.url | relative_url }}" class="post-card">
+        <span class="card-label">{{ game.category }}</span>
+        <h2 class="card-title">{{ game.title }}</h2>
+        <p class="card-excerpt">{{ game.description }}</p>
+      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
-<script src="{{ '/assets/js/game.js' | relative_url }}"></script>

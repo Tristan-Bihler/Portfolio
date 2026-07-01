@@ -23,6 +23,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  games:
+    output: true
+    permalink: /game/:name/
 
 defaults:
   - scope:
@@ -35,6 +38,11 @@ defaults:
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: games
+    values:
+      layout: game
 
 plugins:
   - jekyll-feed

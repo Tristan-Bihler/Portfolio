@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<section class="section-game">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="label">TGB Arcade &middot; {{ page.category }}</p>
+        <h1 class="section-heading">{{ page.title }}</h1>
+      </div>
+      <p class="game-tagline">{{ page.tagline }}</p>
+    </div>
+
+    <div class="game-frame">
+      <div class="card-top-bar"></div>
+      <canvas id="game-canvas" width="900" height="560"></canvas>
+    </div>
+
+    <div class="game-help">
+      {% for c in page.controls %}
+      <span class="chip">{{ c }}</span>
+      {% endfor %}
+    </div>
+
+    <p class="game-back">
+      <a href="{{ '/game' | relative_url }}" class="btn-outline-accent">&larr; All games</a>
+    </p>
+  </div>
+</section>
+<script src="{{ '/assets/js/arcade/core.js' | relative_url }}"></script>
+<script src="{{ page.js | relative_url }}"></script>
