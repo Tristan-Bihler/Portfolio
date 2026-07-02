@@ -8,7 +8,7 @@ date: 2026-05-01
 splash_image: /assets/images/projects/aoi.jpg
 github: https://github.com/Tristan-Bihler/Feintechnikschule_Gesellenstueck_AOI
 ---
-
+ 
 ![AOI-Maschine]({{ '/assets/images/projects/aoi.jpg' | relative_url }})
 
 ## Überblick
