@@ -53,6 +53,14 @@
 
   &:hover { color: $text-mid; }
   &.active { color: $accent; border-bottom-color: $accent; }
+
+  @media (max-width: $bp-sm) { padding: 10px 10px; }
+}
+
+.nav-link-icon {
+  display: inline-flex; align-items: center;
+  padding: 10px 14px;
+  svg { display: block; }
 }
 
 // ─── Hero Full ────────────────────────────────────────
@@ -210,6 +218,31 @@
   font-family: $font-sans;
   font-size: 44px; font-weight: 700;
   color: $text-mid; letter-spacing: -0.03em; line-height: 1.05;
+}
+
+// ─── Skills ───────────────────────────────────────────
+.section-skills {
+  background: $cream-card;
+  padding: $section-pad 0;
+}
+
+.skill-card {
+  background: $cream;
+  padding: 30px 28px 26px;
+  border-top: 2px solid transparent;
+  transition: border-color .22s ease;
+
+  &:hover { border-top-color: $accent; }
+
+  .skill-chips { margin-top: 18px; }
+}
+
+.skill-card-head {
+  display: flex; align-items: center; gap: 10px;
+  color: $accent;
+
+  svg { display: block; flex-shrink: 0; }
+  .card-label { margin: 0; }
 }
 
 // ─── About Layout ─────────────────────────────────────
@@ -448,6 +481,204 @@
   text-align: center;
 }
 
+// ─── Trail Map ────────────────────────────────────────
+.map-frame {
+  background: white; border-radius: 2px; overflow: hidden;
+  box-shadow: 0 1px 4px rgba($text-dark, .06), 0 8px 24px rgba($text-dark, .04);
+}
+
+#trail-map {
+  height: 560px; width: 100%;
+  z-index: 1;
+  @media (max-width: $bp-sm) { height: 420px; }
+}
+
+.map-trips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 20px; justify-content: center;
+}
+
+.map-trip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: $cream-tag; border: none; cursor: pointer;
+  font-family: $font-sans; font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: $text-body; border-radius: 2px;
+  transition: background .2s, color .2s;
+
+  &:hover { background: $accent-pale; color: #a33d1e; }
+}
+
+.map-trip-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: $accent; flex-shrink: 0;
+}
+
+.map-trip-date { color: $text-dim; font-weight: 400; }
+
+.leaflet-popup-content-wrapper {
+  background: $cream; border-radius: 2px;
+  box-shadow: 0 4px 16px rgba($text-dark, .14);
+}
+.leaflet-popup-tip { background: $cream; }
+.leaflet-container { font-family: $font-sans; }
+
+.map-popup {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 4px 2px;
+}
+.map-popup-label {
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: $accent; font-weight: 600;
+}
+.map-popup-title { font-size: 16px; font-weight: 700; color: $text-dark; }
+.map-popup-link { font-size: 12.5px; color: $accent; font-weight: 500; }
+.map-popup-caption { font-size: 13.5px; font-weight: 500; color: $text-mid; }
+
+.map-photo span {
+  display: block; width: 36px; height: 36px;
+  border-radius: 50%;
+  background-size: cover; background-position: center;
+  border: 2.5px solid $cream;
+  box-shadow: 0 2px 8px rgba($text-dark, .3);
+  transition: transform .15s ease;
+}
+.map-photo:hover span { transform: scale(1.18); }
+
+.map-photo-popup img {
+  width: 100%; display: block;
+  border-radius: 2px; margin-bottom: 4px;
+}
+
+.map-hint {
+  background: $cream;
+  padding: 7px 12px;
+  font-family: $font-sans;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: $text-muted; font-weight: 600;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba($text-dark, .2);
+}
+
+// ─── Search ───────────────────────────────────────────
+.search-box {
+  display: flex; align-items: center; gap: 14px;
+  border-bottom: 2px solid rgba($text-dark, .15);
+  padding-bottom: 14px;
+  color: $text-dim;
+  transition: border-color .25s;
+
+  &:focus-within { border-bottom-color: $accent; color: $accent; }
+
+  input {
+    flex: 1;
+    border: none; outline: none; background: none;
+    font-family: $font-sans; font-size: 24px; font-weight: 300;
+    color: $text-dark;
+    &::placeholder { color: $text-dim; }
+  }
+}
+
+.search-count {
+  margin-top: 16px;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: $text-dim;
+}
+
+.search-results {
+  margin-top: 28px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.search-hit {
+  display: block;
+  background: $cream-card;
+  padding: 22px 26px;
+  border-left: 2px solid transparent;
+  transition: background .2s, border-color .2s;
+
+  &:hover { background: #eceae0; border-left-color: $accent; }
+
+  .card-label { margin-bottom: 6px; }
+}
+
+.search-hit-title {
+  display: block;
+  font-size: 18px; font-weight: 600; color: $text-mid;
+  margin-bottom: 6px;
+}
+
+.search-hit-text {
+  display: block;
+  font-size: 13.5px; line-height: 1.65; color: $text-muted; font-weight: 300;
+}
+
+// ─── GitHub Stats ─────────────────────────────────────
+.gh-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 28px;
+  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
+}
+
+.gh-stat {
+  background: $cream-card;
+  padding: 24px 28px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+
+.gh-stat-num {
+  font-size: 34px; font-weight: 700; color: $text-dark;
+  letter-spacing: -0.02em;
+}
+
+.gh-stat-label {
+  font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: $accent; font-weight: 600;
+}
+
+.gh-repo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  @media (max-width: $bp-md) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
+}
+
+.gh-repo {
+  display: flex; flex-direction: column; gap: 8px;
+  background: $cream-card;
+  padding: 24px 26px;
+  border-top: 2px solid transparent;
+  transition: background .2s, border-color .2s;
+
+  &:hover { background: #eceae0; border-top-color: $accent; }
+}
+
+.gh-repo-name {
+  font-size: 15px; font-weight: 600; color: $text-mid;
+  word-break: break-word;
+}
+
+.gh-repo-desc {
+  font-size: 13px; line-height: 1.6; color: $text-muted; font-weight: 300;
+  flex: 1;
+}
+
+.gh-repo-meta {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  font-size: 11px; color: $text-dim;
+}
+
+.gh-lang { display: inline-flex; align-items: center; gap: 5px; }
+
+.gh-lang-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block;
+}
+
 // ─── Footer ───────────────────────────────────────────
 .site-footer {
   background: $footer-bg;
@@ -466,6 +697,19 @@
 }
 
 .footer-role { font-size: 13px; color: $text-muted; }
+
+.footer-pages {
+  margin-top: 10px;
+  font-size: 12px; color: $text-dim;
+  display: flex; gap: 8px;
+
+  a {
+    color: $text-muted;
+    letter-spacing: .06em; text-transform: uppercase; font-size: 11px;
+    transition: color .2s;
+    &:hover { color: $accent; }
+  }
+}
 
 .footer-copy { font-size: 12px; color: $text-dim; }
 

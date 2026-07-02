@@ -1,0 +1,37 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "type": "Blog",
+    "date": {{ post.date | date: "%B %Y" | jsonify }},
+    "category": {{ post.category | jsonify }},
+    "text": {{ post.content | strip_html | normalize_whitespace | truncate: 1600 | jsonify }}
+  },
+{% endfor %}
+{% for project in site.projects %}
+  {
+    "title": {{ project.title | jsonify }},
+    "url": {{ project.url | relative_url | jsonify }},
+    "type": "Project",
+    "date": {{ project.date | date: "%B %Y" | jsonify }},
+    "category": {{ project.category | jsonify }},
+    "text": {{ project.description | append: " " | append: project.content | strip_html | normalize_whitespace | truncate: 1600 | jsonify }}
+  },
+{% endfor %}
+{% assign games = site.games | sort: 'order' %}
+{% for game in games %}
+  {
+    "title": {{ game.title | jsonify }},
+    "url": {{ game.url | relative_url | jsonify }},
+    "type": "Game",
+    "date": "TGB Arcade",
+    "category": {{ game.category | jsonify }},
+    "text": {{ game.description | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

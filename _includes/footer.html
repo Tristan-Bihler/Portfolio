@@ -3,6 +3,13 @@
     <div>
       <p class="footer-name">{{ site.author.name }}</p>
       <p class="footer-role">{{ site.author.role }}</p>
+      <p class="footer-pages">
+        <a href="{{ '/now' | relative_url }}">Now</a>
+        <span>&middot;</span>
+        <a href="{{ '/uses' | relative_url }}">Uses</a>
+        <span>&middot;</span>
+        <a href="{{ '/map' | relative_url }}">Map</a>
+      </p>
     </div>
     <div style="display:flex; flex-direction:column; align-items:flex-end; gap:14px;">
       <div class="footer-socials">

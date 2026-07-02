@@ -1,0 +1,256 @@
+# Photo locations for the trail map.
+# lat/lng from EXIF where available (source: exif).
+# Manual entries (source: manual) are reconstructed from the blog posts —
+# adjust freely, the map updates on the next build.
+
+- file: "Blumberg 2022/PXL_20220403_054227641.jpg"
+  trip: "Blumberg 2022"
+  thumb: /assets/images/map-thumbs/blumberg-2022-pxl_20220403_054227641.jpg
+  full: "/Travels/Blumberg%202022/PXL_20220403_054227641.jpg"
+  lat: 47.848322
+  lng: 8.514017
+  source: exif
+  caption: "Snowy forest trail near Blumberg"
+
+- file: "Blumberg 2022/PXL_20220403_054243802.jpg"
+  trip: "Blumberg 2022"
+  thumb: /assets/images/map-thumbs/blumberg-2022-pxl_20220403_054243802.jpg
+  full: "/Travels/Blumberg%202022/PXL_20220403_054243802.jpg"
+  lat: 47.848322
+  lng: 8.514017
+  source: exif
+  caption: "Winter panorama over the Baar plateau"
+
+- file: "Blumberg 2022/PXL_20220403_071302777.jpg"
+  trip: "Blumberg 2022"
+  thumb: /assets/images/map-thumbs/blumberg-2022-pxl_20220403_071302777.jpg
+  full: "/Travels/Blumberg%202022/PXL_20220403_071302777.jpg"
+  lat: 47.848286
+  lng: 8.514111
+  source: exif
+  caption: "At the viewpoint above Blumberg"
+
+- file: "Italy 2024/IMG_2466.JPG"
+  trip: "Italy 2024"
+  thumb: /assets/images/map-thumbs/italy-2024-img_2466.jpg
+  full: "/Travels/Italy%202024/IMG_2466.JPG"
+  lat: 45.960
+  lng: 8.585
+  source: manual
+  caption: "Alpine valley from the high ground above Lago Maggiore"
+
+- file: "Italy 2024/IMG_2472.JPG"
+  trip: "Italy 2024"
+  thumb: /assets/images/map-thumbs/italy-2024-img_2472.jpg
+  full: "/Travels/Italy%202024/IMG_2472.JPG"
+  lat: 45.933
+  lng: 8.566
+  source: manual
+  caption: "Church bell tower by the lake"
+
+- file: "Italy 2024/IMG_2494.JPG"
+  trip: "Italy 2024"
+  thumb: /assets/images/map-thumbs/italy-2024-img_2494.jpg
+  full: "/Travels/Italy%202024/IMG_2494.JPG"
+  lat: 45.930
+  lng: 8.563
+  source: manual
+  caption: "Narrow village alley"
+
+- file: "Norway 2024/IMG_2199.JPG"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2199.jpg
+  full: "/Travels/Norway%202024/IMG_2199.JPG"
+  lat: 59.9077
+  lng: 10.7590
+  source: manual
+  caption: "Barcode district, Oslo"
+
+- file: "Norway 2024/IMG_2283.JPG"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2283.jpg
+  full: "/Travels/Norway%202024/IMG_2283.JPG"
+  lat: 60.0705
+  lng: 6.5448
+  source: manual
+  caption: "Old excavator at the Odda harbour"
+
+- file: "Norway 2024/IMG_2294.JPG"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2294.jpg
+  full: "/Travels/Norway%202024/IMG_2294.JPG"
+  lat: 60.1265
+  lng: 6.7625
+  source: manual
+  caption: "Ringedalsvatnet from the Trolltunga trail"
+
+- file: "Norway 2024/IMG_2384.jpg"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2384.jpg
+  full: "/Travels/Norway%202024/IMG_2384.jpg"
+  lat: 60.030
+  lng: 6.530
+  source: manual
+  caption: "Milky Way core over the forest camp"
+
+- file: "Norway 2024/IMG_2393.jpg"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2393.jpg
+  full: "/Travels/Norway%202024/IMG_2393.jpg"
+  lat: 60.031
+  lng: 6.531
+  source: manual
+  caption: "Milky Way over the pines"
+
+- file: "Norway 2024/IMG_2439.JPG"
+  trip: "Norway 2024"
+  thumb: /assets/images/map-thumbs/norway-2024-img_2439.jpg
+  full: "/Travels/Norway%202024/IMG_2439.JPG"
+  lat: 60.029
+  lng: 6.529
+  source: manual
+  caption: "Wild camping, allemannsretten style"
+
+- file: "Stockholm/_MG_3451.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3451.jpg
+  full: "/Travels/Stockholm/_MG_3451.JPG"
+  lat: 59.3399
+  lng: 18.0467
+  source: manual
+  caption: "Twin spires of Gustaf Vasa kyrka"
+
+- file: "Stockholm/_MG_3457.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3457.jpg
+  full: "/Travels/Stockholm/_MG_3457.JPG"
+  lat: 59.3288
+  lng: 18.0745
+  source: manual
+  caption: "Grand neoclassical facade"
+
+- file: "Stockholm/_MG_3462.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3462.jpg
+  full: "/Travels/Stockholm/_MG_3462.JPG"
+  lat: 59.3300
+  lng: 18.0685
+  source: manual
+  caption: "Old sandstone beside modern glass"
+
+- file: "Stockholm/_MG_3463.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3463.jpg
+  full: "/Travels/Stockholm/_MG_3463.JPG"
+  lat: 59.3277
+  lng: 18.0672
+  source: manual
+  caption: "The Riksdag on Helgeandsholmen"
+
+- file: "Stockholm/_MG_3465.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3465.jpg
+  full: "/Travels/Stockholm/_MG_3465.JPG"
+  lat: 59.3287
+  lng: 18.0654
+  source: manual
+  caption: "Grand entrance with globe lanterns"
+
+- file: "Stockholm/_MG_3468.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3468.jpg
+  full: "/Travels/Stockholm/_MG_3468.JPG"
+  lat: 59.3247
+  lng: 18.0706
+  source: manual
+  caption: "Narrow street in Gamla Stan"
+
+- file: "Stockholm/_MG_3469.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3469.jpg
+  full: "/Travels/Stockholm/_MG_3469.JPG"
+  lat: 59.3244
+  lng: 18.0700
+  source: manual
+  caption: "A very unimpressed mallard, Gamla Stan"
+
+- file: "Stockholm/_MG_3471.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3471.jpg
+  full: "/Travels/Stockholm/_MG_3471.JPG"
+  lat: 59.3239
+  lng: 18.0716
+  source: manual
+  caption: "Fatöl in careful chalk lettering"
+
+- file: "Stockholm/_MG_3504.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3504.jpg
+  full: "/Travels/Stockholm/_MG_3504.JPG"
+  lat: 59.3259
+  lng: 18.0821
+  source: manual
+  caption: "Copper dome of the Skeppsholmen church"
+
+- file: "Stockholm/_MG_3509.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3509.jpg
+  full: "/Travels/Stockholm/_MG_3509.JPG"
+  lat: 59.3238
+  lng: 18.0823
+  source: manual
+  caption: "Tall ship masts along the shore"
+
+- file: "Stockholm/_MG_3522.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3522.jpg
+  full: "/Travels/Stockholm/_MG_3522.JPG"
+  lat: 59.3220
+  lng: 18.0740
+  source: manual
+  caption: "Gamla Stan skyline from the water"
+
+- file: "Stockholm/_MG_3526.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3526.jpg
+  full: "/Travels/Stockholm/_MG_3526.JPG"
+  lat: 59.3215
+  lng: 18.0790
+  source: manual
+  caption: "City skyline from the water"
+
+- file: "Stockholm/_MG_3530.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3530.jpg
+  full: "/Travels/Stockholm/_MG_3530.JPG"
+  lat: 59.3249
+  lng: 18.0637
+  source: manual
+  caption: "Riddarholmen church tower"
+
+- file: "Stockholm/_MG_3535.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3535.jpg
+  full: "/Travels/Stockholm/_MG_3535.JPG"
+  lat: 59.3291
+  lng: 18.0771
+  source: manual
+  caption: "The Grand Hotel"
+
+- file: "Stockholm/_MG_3541.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3541.jpg
+  full: "/Travels/Stockholm/_MG_3541.JPG"
+  lat: 59.3324
+  lng: 18.0637
+  source: manual
+  caption: "Sergels Torg fountain"
+
+- file: "Stockholm/_MG_3744.JPG"
+  trip: "Stockholm"
+  thumb: /assets/images/map-thumbs/stockholm-_mg_3744.jpg
+  full: "/Travels/Stockholm/_MG_3744.JPG"
+  lat: 59.3274
+  lng: 18.0543
+  source: manual
+  caption: "Tre Kronor atop the Stadshuset tower"
