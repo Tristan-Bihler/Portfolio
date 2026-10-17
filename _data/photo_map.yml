@@ -254,3 +254,75 @@
   lng: 18.0543
   source: manual
   caption: "Tre Kronor atop the Stadshuset tower"
+
+- file: "Hermitage/_MG_5623.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_5623.jpg
+  full: "/Travels/Hermitage/_MG_5623.JPG"
+  lat: 56.5655
+  lng: -3.6035
+  source: manual
+  caption: "Gravel track through the conifer woods"
+
+- file: "Hermitage/_MG_5648.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_5648.jpg
+  full: "/Travels/Hermitage/_MG_5648.JPG"
+  lat: 56.5662
+  lng: -3.602
+  source: manual
+  caption: "Birch-lined path in autumn light"
+
+- file: "Hermitage/_MG_5677.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_5677.jpg
+  full: "/Travels/Hermitage/_MG_5677.JPG"
+  lat: 56.5668
+  lng: -3.6005
+  source: manual
+  caption: "Old oaks over the path"
+
+- file: "Hermitage/_MG_5690.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_5690.jpg
+  full: "/Travels/Hermitage/_MG_5690.JPG"
+  lat: 56.567
+  lng: -3.6
+  source: manual
+  caption: "Still forest pool among the ferns"
+
+- file: "Hermitage/_MG_5903.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_5903.jpg
+  full: "/Travels/Hermitage/_MG_5903.JPG"
+  lat: 56.5672
+  lng: -3.5985
+  source: manual
+  caption: "Sunlit spray over the River Braan rapids"
+
+- file: "Hermitage/_MG_6053.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_6053.jpg
+  full: "/Travels/Hermitage/_MG_6053.JPG"
+  lat: 56.5671
+  lng: -3.598
+  source: manual
+  caption: "Black Linn Falls below Ossian's Hall"
+
+- file: "Hermitage/_MG_6055.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_6055.jpg
+  full: "/Travels/Hermitage/_MG_6055.JPG"
+  lat: 56.5671
+  lng: -3.598
+  source: manual
+  caption: "Black Linn Falls up close"
+
+- file: "Hermitage/_MG_6078.JPG"
+  trip: "Hermitage"
+  thumb: /assets/images/map-thumbs/hermitage-_mg_6078.jpg
+  full: "/Travels/Hermitage/_MG_6078.JPG"
+  lat: 56.567
+  lng: -3.5982
+  source: manual
+  caption: "Mossy stonework along the gorge"
