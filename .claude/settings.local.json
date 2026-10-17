@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec *)",
+      "PowerShell(Rename-Item *)",
+      "WebFetch(domain:www.tristan-bihler.org)",
+      "PowerShell(New-Item *)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "PowerShell(bundle exec *)",
+      "PowerShell(Start-Sleep -Seconds 3; $r = Invoke-WebRequest -Uri \"http://localhost:4000/game/\" -UseBasicParsing; echo \"STATUS: $\\($r.StatusCode\\)\"; $r2 = Invoke-WebRequest -Uri \"http://localhost:4000/assets/js/game.js\" -UseBasicParsing; echo \"JS: $\\($r2.StatusCode\\) len=$\\($r2.Content.Length\\)\")",
+      "PowerShell(node --check assets/js/game.js; echo \"SYNTAX EXIT: $LASTEXITCODE\")",
+      "PowerShell(node \"C:\\\\Users\\\\Trist\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Trist-OneDrive-Dokumente-Projekte-Portfolio\\\\b8d7dd67-ac51-4717-9b82-3e315d65190e\\\\scratchpad\\\\game-harness.js\" assets\\\\js\\\\game.js)",
+      "PowerShell($h = \"C:\\\\Users\\\\Trist\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Trist-OneDrive-Dokumente-Projekte-Portfolio\\\\b8d7dd67-ac51-4717-9b82-3e315d65190e\\\\scratchpad\\\\arcade-harness.js\"; node $h assets\\\\js\\\\arcade\\\\core.js assets\\\\js\\\\arcade\\\\breakpoint.js BREAKPOINT)",
+      "PowerShell($hub = Get-Content _site\\\\game\\\\index.html -Raw; $cards = \\([regex]::Matches\\($hub, 'class=\"post-card\"'\\)\\).Count; echo \"Hub cards: $cards\"; $pages = Get-ChildItem _site\\\\game -Directory | Select-Object -ExpandProperty Name; echo \"Game pages \\($\\($pages.Count\\)\\): $\\($pages -join ', '\\)\"; $sample = Get-Content _site\\\\game\\\\orbit\\\\index.html -Raw; echo \"Orbit page loads core: $\\($sample -match 'arcade/core\\\\.js'\\) + game js: $\\($sample -match 'arcade/orbit\\\\.js'\\)\")",
+      "PowerShell(Start-Sleep -Seconds 8; $ok = 0; $bad = @\\(\\); foreach \\($p in @\\('game','game/debug-mode','game/loopback','game/breakpoint','game/trace-router','game/voltage-hop','game/solder-storm','game/overflow','game/signal-echo','game/short-circuit','game/bitshift','game/bug-patch','game/latency','game/keystroke','game/stack-jump','game/cable-run','game/surge','game/data-crossing','game/power-grid','game/xor','game/steady-hand','game/orbit'\\)\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:4000/$p/\" -UseBasicParsing; if \\($r.StatusCode -eq 200\\) { $ok++ } else { $bad += $p } } catch { $bad += $p } }; echo \"OK: $ok / 22 | Failed: $\\($bad -join ', '\\)\")",
+      "PowerShell(node --check assets\\\\js\\\\map.js; node --check assets\\\\js\\\\search.js; node --check assets\\\\js\\\\github-stats.js; echo \"SYNTAX EXIT: $LASTEXITCODE\")",
+      "PowerShell(node \"C:\\\\Users\\\\Trist\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Trist-OneDrive-Dokumente-Projekte-Portfolio\\\\b8d7dd67-ac51-4717-9b82-3e315d65190e\\\\scratchpad\\\\verify-pages.js\" _site)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://api.github.com/users/Tristan-Bihler\" -UseBasicParsing; $j = $r.Content | ConvertFrom-Json; echo \"GitHub user OK: $\\($j.login\\) — public repos: $\\($j.public_repos\\), followers: $\\($j.followers\\)\" } catch { echo \"GitHub API check failed: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(Start-Sleep -Seconds 8; $ok=0; $bad=@\\(\\); foreach \\($p in @\\('','map/','search/','search.json','now/','uses/','projects/','game/'\\)\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:4000/$p\" -UseBasicParsing; if \\($r.StatusCode -eq 200\\) { $ok++ } else { $bad += $p } } catch { $bad += $p } }; echo \"OK: $ok / 8 | Failed: $\\($bad -join ', '\\)\")",
+      "PowerShell($idx = Get-Content _site\\\\index.html -Raw; echo \"Skills section: $\\($idx -match 'section-skills'\\) | groups: $\\(\\([regex]::Matches\\($idx, 'skill-card-head'\\)\\).Count\\) | chips: $\\(\\([regex]::Matches\\($idx, '<span class=\"\"chip\"\">'\\)\\).Count\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\Trist\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Trist-OneDrive-Dokumente-Projekte-Portfolio\\\\b8d7dd67-ac51-4717-9b82-3e315d65190e\\\\scratchpad\\\\extract-photo-gps.ps1\")",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(& \"C:\\\\Users\\\\Trist\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Trist-OneDrive-Dokumente-Projekte-Portfolio\\\\b8d7dd67-ac51-4717-9b82-3e315d65190e\\\\scratchpad\\\\draw-favicon.ps1\")",
+      "PowerShell($pm = Get-Content _site\\\\photo-map.json -Raw | ConvertFrom-Json; echo \"photo-map.json: $\\($pm.Count\\) photos, exif: $\\(@\\($pm | Where-Object { -not $_.approx }\\).Count\\), thumbs exist: $\\(@\\($pm | Where-Object { Test-Path \\('_site' + \\($_.thumb -replace '/','\\\\'\\)\\) }\\).Count\\)\"; $mp = Get-Content _site\\\\map\\\\index.html -Raw; echo \"map page data-photos: $\\($mp -match 'data-photos'\\)\"; $idx = Get-Content _site\\\\index.html -Raw; echo \"favicon links: $\\($idx -match 'favicon.svg'\\) $\\($idx -match 'favicon-32.png'\\) $\\($idx -match 'apple-touch-icon.png'\\)\"; echo \"favicon files in _site: $\\(Test-Path _site\\\\assets\\\\images\\\\favicon.svg\\) $\\(Test-Path _site\\\\assets\\\\images\\\\favicon-32.png\\) $\\(Test-Path _site\\\\assets\\\\images\\\\apple-touch-icon.png\\)\")",
+      "PowerShell(git log --oneline -5; git status --short | Measure-Object -Line | ForEach-Object { echo \"uncommitted: $\\($_.Lines\\)\" }; if \\(Test-Path .github\\\\workflows\\) { Get-ChildItem .github\\\\workflows | Select-Object -ExpandProperty Name } else { echo \"no workflows dir\" })",
+      "PowerShell($size = \\(Get-ChildItem _site -Recurse -File | Measure-Object -Property Length -Sum\\); echo \\(\"_site: {0:N1} MB, {1} files\" -f \\($size.Sum/1MB\\), $size.Count\\); $tr = \\(Get-ChildItem _site\\\\Travels -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum\\); if \\($tr.Sum\\) { echo \\(\"Travels in _site: {0:N1} MB\" -f \\($tr.Sum/1MB\\)\\) })",
+      "PowerShell(gh *)"
+    ]
+  }
+}
