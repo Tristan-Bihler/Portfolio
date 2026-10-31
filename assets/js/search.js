@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
    SEARCH — tiny client-side search over posts,
-   projects and arcade games (index: /search.json).
+   and projects (index: /search.json).
    ────────────────────────────────────────────────────── */
 (function () {
   'use strict';

@@ -27,122 +27,12 @@ layout: default
         <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="{{ site.author.name }}" class="about-photo">
         <div class="about-photo-bar"></div>
       </div>
-      <div class="skill-chips">
-        <span class="chip">Electronics</span>
-        <span class="chip">Embedded Systems</span>
-        <span class="chip">Python</span>
-        <span class="chip">C / C++</span>
-        <span class="chip">Matlab</span>
-      </div>
     </div>
     <div class="about-text-col">
       <p class="label">About Me</p>
       <h2 class="about-heading">Engineer,<br>Explorer,<br>Builder.</h2>
       <p>Trained in electronics and basic mechanics at the Feintechnik school, I'm now studying Electrical Engineering and Information Technology at DHBW — bridging hardware and software, from embedded systems and microcontrollers to data analytics and visualisation.</p>
       <p>When I'm not debugging circuits or parsing datasets, I'm out hiking and travelling — finding the same satisfaction in reaching a summit as in shipping a project.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section class="section-skills">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <p class="label">Toolbox</p>
-        <h2 class="section-heading">Skills &amp; Tech Stack</h2>
-      </div>
-    </div>
-    <div class="card-grid-flush">
-      {% for group in site.data.skills %}
-      <div class="skill-card">
-        <div class="skill-card-head">
-          {% if group.icon == 'chip' %}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <rect x="6" y="6" width="12" height="12" rx="2"></rect>
-            <rect x="10" y="10" width="4" height="4"></rect>
-            <path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"></path>
-          </svg>
-          {% elsif group.icon == 'code' %}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m8 7-5 5 5 5"></path>
-            <path d="m16 7 5 5-5 5"></path>
-            <path d="m13 4-2 16"></path>
-          </svg>
-          {% else %}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <path d="M3 3v18h18"></path>
-            <path d="M7 15v3M11 11v7M15 13v5M19 7v11"></path>
-          </svg>
-          {% endif %}
-          <span class="card-label">{{ group.name }}</span>
-        </div>
-        <div class="skill-chips">
-          {% for skill in group.items %}
-          <span class="chip">{{ skill }}</span>
-          {% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Blog Preview -->
-<section class="section-blog-preview">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <p class="label">Recent Writing</p>
-        <h2 class="section-heading">From the Blog</h2>
-      </div>
-      <a href="{{ '/blog' | relative_url }}" class="btn-outline-accent">All Posts →</a>
-    </div>
-    <div class="card-grid-flush">
-      {% for post in site.posts limit:3 %}
-      <a href="{{ post.url | relative_url }}" class="post-card">
-        <span class="card-label">{{ post.category }}</span>
-        <h3 class="card-title">{{ post.title }}</h3>
-        <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <div class="card-footer-row">
-          <span class="card-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-          <span class="card-cta">Read →</span>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Projects Preview -->
-<section class="section-cream">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <p class="label">Selected Work</p>
-        <h2 class="section-heading">Recent Projects</h2>
-      </div>
-      <a href="{{ '/projects' | relative_url }}" class="btn-outline-dark">All Projects →</a>
-    </div>
-    <div class="card-grid">
-      {% for project in site.projects limit:3 %}
-      <a href="{{ project.url | relative_url }}" class="project-card">
-        <div class="card-top-bar"></div>
-        <div class="card-body">
-          <span class="card-label">{{ project.category }}</span>
-          <h3 class="card-title">{{ project.title }}</h3>
-          <p class="card-excerpt">{{ project.description }}</p>
-          <div class="tag-row">
-            {% for tag in project.tags %}
-            <span class="tag-accent">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          <div class="card-footer-row right">
-            <span class="card-cta">View Project →</span>
-          </div>
-        </div>
-      </a>
-      {% endfor %}
     </div>
   </div>
 </section>

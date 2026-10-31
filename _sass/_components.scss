@@ -193,16 +193,6 @@
   background: $cream;
 }
 
-.section-blog-preview {
-  background: $cream;
-  padding: $section-pad 0;
-}
-
-.section-cream {
-  background: #fefcf8;
-  padding: $section-pad 0;
-}
-
 .section-content {
   background: $cream;
   padding: 72px 0 100px;
@@ -218,31 +208,6 @@
   font-family: $font-sans;
   font-size: 44px; font-weight: 700;
   color: $text-mid; letter-spacing: -0.03em; line-height: 1.05;
-}
-
-// ─── Skills ───────────────────────────────────────────
-.section-skills {
-  background: $cream-card;
-  padding: $section-pad 0;
-}
-
-.skill-card {
-  background: $cream;
-  padding: 30px 28px 26px;
-  border-top: 2px solid transparent;
-  transition: border-color .22s ease;
-
-  &:hover { border-top-color: $accent; }
-
-  .skill-chips { margin-top: 18px; }
-}
-
-.skill-card-head {
-  display: flex; align-items: center; gap: 10px;
-  color: $accent;
-
-  svg { display: block; flex-shrink: 0; }
-  .card-label { margin: 0; }
 }
 
 // ─── About Layout ─────────────────────────────────────
@@ -269,17 +234,6 @@
   position: absolute; bottom: 0; left: 0;
   width: 0; height: 4px; background: $accent;
   animation: barGrow .8s ease .6s both;
-}
-
-.skill-chips {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px;
-}
-
-.chip {
-  padding: 6px 13px;
-  background: $cream-tag; color: $accent;
-  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
-  border-radius: 2px; font-weight: 500;
 }
 
 .about-text-col { padding-top: 8px; }
@@ -319,7 +273,7 @@
   border-top: 2px solid transparent;
   transition: background .22s ease, border-color .22s ease;
 
-  &:hover { background: #eceae0; border-top-color: $accent; }
+  &:hover { background: #f5f0e8; border-top-color: $accent; }
 
   .card-label { color: $accent; display: block; margin-bottom: 16px; }
   .card-title  { font-family: $font-sans; font-size: 20px; font-weight: 600; color: $text-mid; line-height: 1.4; margin-bottom: 14px; letter-spacing: -0.01em; }
@@ -447,119 +401,6 @@
 
 .nav-title { font-size: 15px; color: $text-dark; font-weight: 500; }
 
-// ─── Game ─────────────────────────────────────────────
-.section-game {
-  background: $cream;
-  padding: calc(#{$nav-h} + 64px) 0 100px;
-  min-height: 100vh;
-}
-
-.game-tagline {
-  font-size: 15px; line-height: 1.7; color: $text-muted;
-  font-weight: 300; text-align: right;
-  @media (max-width: $bp-sm) { text-align: left; }
-}
-
-.game-frame {
-  background: white; border-radius: 2px; overflow: hidden;
-  box-shadow: 0 1px 4px rgba($text-dark, .06), 0 8px 24px rgba($text-dark, .04);
-
-  canvas {
-    display: block; width: 100%; height: auto;
-    touch-action: none;
-    cursor: crosshair;
-  }
-}
-
-.game-help {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 20px; justify-content: center;
-}
-
-.game-back {
-  margin-top: 32px;
-  text-align: center;
-}
-
-// ─── Trail Map ────────────────────────────────────────
-.map-frame {
-  background: white; border-radius: 2px; overflow: hidden;
-  box-shadow: 0 1px 4px rgba($text-dark, .06), 0 8px 24px rgba($text-dark, .04);
-}
-
-#trail-map {
-  height: 560px; width: 100%;
-  z-index: 1;
-  @media (max-width: $bp-sm) { height: 420px; }
-}
-
-.map-trips {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 20px; justify-content: center;
-}
-
-.map-trip {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 14px;
-  background: $cream-tag; border: none; cursor: pointer;
-  font-family: $font-sans; font-size: 11px; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: $text-body; border-radius: 2px;
-  transition: background .2s, color .2s;
-
-  &:hover { background: $accent-pale; color: #a33d1e; }
-}
-
-.map-trip-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: $accent; flex-shrink: 0;
-}
-
-.map-trip-date { color: $text-dim; font-weight: 400; }
-
-.leaflet-popup-content-wrapper {
-  background: $cream; border-radius: 2px;
-  box-shadow: 0 4px 16px rgba($text-dark, .14);
-}
-.leaflet-popup-tip { background: $cream; }
-.leaflet-container { font-family: $font-sans; }
-
-.map-popup {
-  display: flex; flex-direction: column; gap: 6px;
-  padding: 4px 2px;
-}
-.map-popup-label {
-  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-  color: $accent; font-weight: 600;
-}
-.map-popup-title { font-size: 16px; font-weight: 700; color: $text-dark; }
-.map-popup-link { font-size: 12.5px; color: $accent; font-weight: 500; }
-.map-popup-caption { font-size: 13.5px; font-weight: 500; color: $text-mid; }
-
-.map-photo span {
-  display: block; width: 36px; height: 36px;
-  border-radius: 50%;
-  background-size: cover; background-position: center;
-  border: 2.5px solid $cream;
-  box-shadow: 0 2px 8px rgba($text-dark, .3);
-  transition: transform .15s ease;
-}
-.map-photo:hover span { transform: scale(1.18); }
-
-.map-photo-popup img {
-  width: 100%; display: block;
-  border-radius: 2px; margin-bottom: 4px;
-}
-
-.map-hint {
-  background: $cream;
-  padding: 7px 12px;
-  font-family: $font-sans;
-  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-  color: $text-muted; font-weight: 600;
-  border-radius: 2px;
-  box-shadow: 0 1px 5px rgba($text-dark, .2);
-}
 
 // ─── Search ───────────────────────────────────────────
 .search-box {
@@ -598,7 +439,7 @@
   border-left: 2px solid transparent;
   transition: background .2s, border-color .2s;
 
-  &:hover { background: #eceae0; border-left-color: $accent; }
+  &:hover { background: #f5f0e8; border-left-color: $accent; }
 
   .card-label { margin-bottom: 6px; }
 }
@@ -654,7 +495,7 @@
   border-top: 2px solid transparent;
   transition: background .2s, border-color .2s;
 
-  &:hover { background: #eceae0; border-top-color: $accent; }
+  &:hover { background: #f5f0e8; border-top-color: $accent; }
 }
 
 .gh-repo-name {
@@ -698,19 +539,6 @@
 
 .footer-role { font-size: 13px; color: $text-muted; }
 
-.footer-pages {
-  margin-top: 10px;
-  font-size: 12px; color: $text-dim;
-  display: flex; gap: 8px;
-
-  a {
-    color: $text-muted;
-    letter-spacing: .06em; text-transform: uppercase; font-size: 11px;
-    transition: color .2s;
-    &:hover { color: $accent; }
-  }
-}
-
 .footer-copy { font-size: 12px; color: $text-dim; }
 
 .footer-socials {
@@ -721,26 +549,4 @@
   color: $text-muted;
   transition: color .2s;
   &:hover { color: $accent; }
-}
-
-// ─── Easter Egg ───────────────────────────────────────
-@keyframes bugWiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25%      { transform: rotate(-16deg); }
-  75%      { transform: rotate(16deg); }
-}
-
-.footer-bug {
-  display: inline-flex;
-  margin-left: 6px;
-  vertical-align: -2px;
-  color: $text-dim;
-  opacity: .35;
-  transition: color .25s, opacity .25s;
-
-  &:hover {
-    color: $accent;
-    opacity: 1;
-    svg { animation: bugWiggle .45s ease infinite; }
-  }
 }
