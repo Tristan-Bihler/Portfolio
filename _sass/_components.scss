@@ -455,71 +455,6 @@
   font-size: 13.5px; line-height: 1.65; color: $text-muted; font-weight: 300;
 }
 
-// ─── GitHub Stats ─────────────────────────────────────
-.gh-stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-bottom: 28px;
-  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
-}
-
-.gh-stat {
-  background: $cream-card;
-  padding: 24px 28px;
-  display: flex; flex-direction: column; gap: 4px;
-}
-
-.gh-stat-num {
-  font-size: 34px; font-weight: 700; color: $text-dark;
-  letter-spacing: -0.02em;
-}
-
-.gh-stat-label {
-  font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
-  color: $accent; font-weight: 600;
-}
-
-.gh-repo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  @media (max-width: $bp-md) { grid-template-columns: 1fr 1fr; }
-  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
-}
-
-.gh-repo {
-  display: flex; flex-direction: column; gap: 8px;
-  background: $cream-card;
-  padding: 24px 26px;
-  border-top: 2px solid transparent;
-  transition: background .2s, border-color .2s;
-
-  &:hover { background: #f5f0e8; border-top-color: $accent; }
-}
-
-.gh-repo-name {
-  font-size: 15px; font-weight: 600; color: $text-mid;
-  word-break: break-word;
-}
-
-.gh-repo-desc {
-  font-size: 13px; line-height: 1.6; color: $text-muted; font-weight: 300;
-  flex: 1;
-}
-
-.gh-repo-meta {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  font-size: 11px; color: $text-dim;
-}
-
-.gh-lang { display: inline-flex; align-items: center; gap: 5px; }
-
-.gh-lang-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  display: inline-block;
-}
-
 // ─── Footer ───────────────────────────────────────────
 .site-footer {
   background: $footer-bg;
@@ -538,8 +473,6 @@
 }
 
 .footer-role { font-size: 13px; color: $text-muted; }
-
-.footer-copy { font-size: 12px; color: $text-dim; }
 
 .footer-socials {
   display: flex; gap: 18px; align-items: center;
