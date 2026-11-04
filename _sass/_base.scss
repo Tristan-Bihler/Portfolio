@@ -1,3 +1,13 @@
+// Ethnocentric (Typodermic) — place the licensed font files in assets/fonts/
+@font-face {
+  font-family: 'Ethnocentric';
+  src: local('Ethnocentric'), local('Ethnocentric Regular'),
+       url('/assets/fonts/ethnocentric.woff2') format('woff2'),
+       url('/assets/fonts/ethnocentric.otf') format('opentype'),
+       url('/assets/fonts/ethnocentric.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
 @import 'variables';
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

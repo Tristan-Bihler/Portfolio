@@ -83,14 +83,14 @@
 .hero-content {
   position: relative; z-index: 1;
   text-align: center;
-  padding: 0 32px; max-width: 860px;
+  padding: 0 32px; max-width: 1040px;
 }
 
 .hero-title {
-  font-family: $font-sans;
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 300; color: #fdf8f0;
-  line-height: 1.05; letter-spacing: .01em;
+  font-family: $font-display;
+  font-size: clamp(28px, 5.2vw, 64px);
+  font-weight: 400; color: #fff;
+  line-height: 1.2; letter-spacing: .02em;
   animation: fadeUp .8s ease .5s both;
 }
 
@@ -132,8 +132,8 @@
   @media (max-width: $bp-md) { padding: 0 24px 40px; }
 
   .hero-title {
-    font-size: clamp(40px, 6vw, 76px);
-    font-weight: 800; letter-spacing: -0.04em; line-height: 1.0;
+    font-size: clamp(26px, 4.4vw, 56px);
+    font-weight: 400; letter-spacing: .02em; line-height: 1.15;
     animation: none;
   }
 }
@@ -402,6 +402,48 @@
 .nav-title { font-size: 15px; color: $text-dark; font-weight: 500; }
 
 
+// ─── Chips ────────────────────────────────────────────
+.chip {
+  padding: 6px 13px;
+  background: $cream-tag; color: $accent;
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  border-radius: 2px; font-weight: 500;
+}
+
+// ─── Game ─────────────────────────────────────────────
+.section-game {
+  background: $cream;
+  padding: calc(#{$nav-h} + 64px) 0 100px;
+  min-height: 100vh;
+}
+
+.game-tagline {
+  font-size: 15px; line-height: 1.7; color: $text-muted;
+  font-weight: 300; text-align: right;
+  @media (max-width: $bp-sm) { text-align: left; }
+}
+
+.game-frame {
+  background: white; border-radius: 2px; overflow: hidden;
+  box-shadow: 0 1px 4px rgba($text-dark, .06), 0 8px 24px rgba($text-dark, .04);
+
+  canvas {
+    display: block; width: 100%; height: auto;
+    touch-action: none;
+    cursor: crosshair;
+  }
+}
+
+.game-help {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 20px; justify-content: center;
+}
+
+.game-back {
+  margin-top: 32px;
+  text-align: center;
+}
+
 // ─── Search ───────────────────────────────────────────
 .search-box {
   display: flex; align-items: center; gap: 14px;
@@ -482,4 +524,24 @@
   color: $text-muted;
   transition: color .2s;
   &:hover { color: $accent; }
+}
+
+// ─── Easter Egg ───────────────────────────────────────
+@keyframes bugWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-16deg); }
+  75%      { transform: rotate(16deg); }
+}
+
+.footer-bug {
+  display: inline-flex;
+  color: $text-dim;
+  opacity: .35;
+  transition: color .25s, opacity .25s;
+
+  &:hover {
+    color: $accent;
+    opacity: 1;
+    svg { animation: bugWiggle .45s ease infinite; }
+  }
 }
